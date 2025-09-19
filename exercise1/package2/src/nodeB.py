@@ -14,11 +14,9 @@ class NodeB:
         self.q = 0.15
         
     def num_CB(self, msg):
-        #rospy.loginfo("callback: received %s", msg.data)
         result_value = float(msg.data / self.q)
         self.out_msg.data = result_value
         self.pub.publish(self.out_msg)
-        #rospy.loginfo("published: %.3f", result_value)
 
 
 if __name__ == '__main__':
