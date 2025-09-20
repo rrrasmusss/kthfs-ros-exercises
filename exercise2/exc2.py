@@ -1,12 +1,20 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+"""
+Install dependencies with:
+pip install --upgrade pip
+pip install numpy matplotlib
+Use by running exc2.py
+"""
 
 class BasicVisualizer:
     def __init__(self, t0=0, t1=4, samples=1000):
         self.t = np.linspace(t0, t1, samples)
         self.fig, self.ax = plt.subplots()
         # Label axes
+        self.ax.set_xlabel('time (s)')
+        self.ax.set_ylabel('h(t)')
         self.ax.grid()
 
     def lam(self, t):
